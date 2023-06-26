@@ -1,4 +1,6 @@
+import { $spinner } from "../selector.js";
 import { showAlert } from "./message-alert.js";
+import { cleanPaginaWeb, showClima } from "./showClima.js";
 
 export const consultarAPI = (city, country) => {
 
@@ -16,10 +18,29 @@ export const consultarAPI = (city, country) => {
 
       //Mostrar la informacion de la API.
       .then(data => {
-         console.log(data);
+
+         cleanPaginaWeb(); //Eliminar los elemento previo de la pagina web.
+
+         //Mostrar alerta de error si no existe la ciudad.
          if (data.cod === '404') {
             showAlert('Ciudad no encontrada');
             return;
          }
+
+         //Mostrar el spinner 
+         $spinner.classList.remove('hidden')
+         $spinner.classList.add('flex')
+
+         setTimeout(() => {
+
+            //Ocultar el spinner
+            $spinner.classList.add('hidden')
+            $spinner.classList.remove('flex')
+
+            //Mostrar toda la imformacion de la API en la pagina Web
+            showClima(data);
+
+         }, 3000);
+
       });
 }

@@ -8,3 +8,5 @@ export const $country = $('#pais');
 
 //Para Mostrar los elemento 
 export const $container = $('.container');
+export const $showResults = $('#resultado');
+export const $spinner = $('#spinner');
