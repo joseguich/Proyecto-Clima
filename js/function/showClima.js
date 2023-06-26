@@ -29,7 +29,7 @@ export const showClima = (data) => {
    //Clases
    tempearaturaMaxima.classList.add('font-bold', 'text-2xl', 'font-mono');
 
-   temperaturaMinima.innerHTML = `Max: ${tempMinima} <img src ="/img/baja-temperatura.png" class="inline w-8">`;
+   temperaturaMinima.innerHTML = `Min: ${tempMinima} <img src ="/img/baja-temperatura.png" class="inline w-8">`;
    //Clases
    temperaturaMinima.classList.add('font-bold', 'text-2xl', 'font-mono');
 
