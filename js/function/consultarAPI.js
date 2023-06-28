@@ -14,7 +14,15 @@ export const consultarAPI = (city, country) => {
    fetch(url)
 
       //Obtener la respuesta de la API
-      .then(response => response.json())
+      .then(response => {
+
+         //Si la infomacion no fue encontrada que nos muestre el error de status.
+         if (!response.ok) {
+            throw new Error(`Solicitud No Encontrada: ${response.status}`)
+         }
+
+         return response.json();
+      })
 
       //Mostrar la informacion de la API.
       .then(data => {
