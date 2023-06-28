@@ -37,13 +37,13 @@ export const consultarAPI = (city, country) => {
 
          //Mostrar el spinner 
          $spinner.classList.remove('hidden')
-         $spinner.classList.add('flex')
+         $spinner.classList.add('block')
 
          setTimeout(() => {
 
             //Ocultar el spinner
             $spinner.classList.add('hidden')
-            $spinner.classList.remove('flex')
+            $spinner.classList.remove('none')
 
             //Mostrar toda la imformacion de la API en la pagina Web
             showClima(data);
